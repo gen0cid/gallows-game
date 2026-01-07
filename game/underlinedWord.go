@@ -15,7 +15,7 @@ func makeUnderlinedWord() ([]string, []rune) {
 
 	runeWord := []rune(words[index])
 
-	underlinedWord := []string
+	underlinedWord := []string{}
 
 	for i, _ := range underlinedWord {
 		underlinedWord[i] = "_"
