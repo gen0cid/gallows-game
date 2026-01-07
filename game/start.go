@@ -1,4 +1,4 @@
-package casestart
+package game
 
 import (
 	"bufio"
@@ -9,19 +9,15 @@ import (
 
 func Start() {
 
-	UnderlinedWord, RuneWord := underlinedWord()
-
-	for i, _ := range UnderlinedWord {
-		UnderlinedWord[i] = "_"
-	}
+	underlinedWord, runeWord := makeUnderlinedWord()
 
 	var input string
-	Loses := 0
+	loses := 0
 
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
-		fmt.Println("Загаданное слово:", UnderlinedWord)
+		fmt.Println("Загаданное слово:", underlinedWord)
 		for {
 			fmt.Print("Введите букву:")
 			input, _ = reader.ReadString('\n')
@@ -38,32 +34,32 @@ func Start() {
 		}
 
 		// Обновляем маску
-		for i := 0; i < len(RuneWord); i++ {
+		for i := 0; i < len(runeWord); i++ {
 
-			if []rune(input)[0] == RuneWord[i] {
-				UnderlinedWord[i] = input
+			if []rune(input)[0] == runeWord[i] {
+				underlinedWord[i] = input
 			}
 		}
 
 		// проверка есть ли буква игрока в загаданном слове. если нету то счетчик ошибок увеличивается
-		if check([]rune(input)[0], RuneWord) == false {
-			Loses++
+		if check([]rune(input)[0], runeWord) == false {
+			loses++
 		}
 
 		// висилицы для разного количества ошибок
-		printGallows(Loses, RuneWord)
+		printGallows(loses, runeWord)
 
 		isOpen := true
 		// проверяю если слово разгадано
-		for i, _ := range UnderlinedWord {
-			if UnderlinedWord[i] == "_" {
+		for i, _ := range underlinedWord {
+			if underlinedWord[i] == "_" {
 				isOpen = false
 				break
 			}
 		}
 		if isOpen {
 			fmt.Println("🎉 Поздравляем! Слово угадано!")
-			fmt.Println(UnderlinedWord)
+			fmt.Println(underlinedWord)
 			return
 		}
 

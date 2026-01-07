@@ -1,4 +1,4 @@
-package casestart
+package game
 
 func check(l rune, word []rune) bool {
 	for _, v := range word {

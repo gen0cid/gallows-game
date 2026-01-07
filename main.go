@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	casestart "gallows-game/caseStart"
+	"gallows-game/game"
 	"os"
 )
 
@@ -21,7 +21,7 @@ func main() {
 
 		switch {
 		case text == "Start":
-			casestart.Start()
+			game.Start()
 		case text == "Exit":
 			fmt.Println("До свидания!")
 			return

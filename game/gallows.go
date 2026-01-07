@@ -1,13 +1,15 @@
-package casestart
+package game
 
 import "fmt"
 
-func printGallows(Loses int, RuneWord []rune) {
+func printGallows(loses int, RuneWord []rune) {
+
+	fmt.Println("Ты не угадал букву!")
+	fmt.Println("Количество ошибок:", loses)
+
 	switch {
-	case Loses == 1:
+	case loses == 1:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")
@@ -18,10 +20,8 @@ func printGallows(Loses int, RuneWord []rune) {
 			fmt.Println("_|_")
 		}
 
-	case Loses == 2:
+	case loses == 2:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")
@@ -31,10 +31,8 @@ func printGallows(Loses int, RuneWord []rune) {
 			fmt.Println(" |       ")
 			fmt.Println("_|_")
 		}
-	case Loses == 3:
+	case loses == 3:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")
@@ -44,10 +42,8 @@ func printGallows(Loses int, RuneWord []rune) {
 			fmt.Println(" |       ")
 			fmt.Println("_|_")
 		}
-	case Loses == 4:
+	case loses == 4:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")
@@ -57,10 +53,8 @@ func printGallows(Loses int, RuneWord []rune) {
 			fmt.Println(" |       ")
 			fmt.Println("_|_")
 		}
-	case Loses == 5:
+	case loses == 5:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")
@@ -71,10 +65,8 @@ func printGallows(Loses int, RuneWord []rune) {
 			fmt.Println("_|_")
 
 		}
-	case Loses == 6:
+	case loses == 6:
 		{
-			fmt.Println("Ты не угадал букву!")
-			fmt.Println("Количество ошибок:", Loses)
 
 			fmt.Println("  _______")
 			fmt.Println(" |       |")

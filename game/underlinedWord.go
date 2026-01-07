@@ -1,8 +1,8 @@
-package casestart
+package game
 
 import "math/rand"
 
-func underlinedWord() ([]string, []rune) {
+func makeUnderlinedWord() ([]string, []rune) {
 	words := []string{
 		"мост", "кран", "окно", "леска", "кусты",
 		"кость", "туча", "муха", "гроза", "ворот",
@@ -13,7 +13,13 @@ func underlinedWord() ([]string, []rune) {
 	}
 	index := rand.Intn(len(words))
 
-	RuneWord := []rune(words[index])
+	runeWord := []rune(words[index])
 
-	return make([]string, len(RuneWord)), RuneWord
+	underlinedWord := []string
+
+	for i, _ := range underlinedWord {
+		underlinedWord[i] = "_"
+	}
+
+	return underlinedWord, runeWord
 }
