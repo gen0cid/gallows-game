@@ -1,84 +1,23 @@
 package game
 
-import "fmt"
-
-func printGallows(loses int, RuneWord []rune) {
-
-	fmt.Println("Ты не угадал букву!")
-	fmt.Println("Количество ошибок:", loses)
-
-	switch {
-	case loses == 1:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |       ")
-			fmt.Println(" |       ")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-		}
-
-	case loses == 2:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |       |")
-			fmt.Println(" |       ")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-		}
-	case loses == 3:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |      /|")
-			fmt.Println(" |       ")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-		}
-	case loses == 4:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |      /|\\")
-			fmt.Println(" |       ")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-		}
-	case loses == 5:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |      /|\\")
-			fmt.Println(" |      / ")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-
-		}
-	case loses == 6:
-		{
-
-			fmt.Println("  _______")
-			fmt.Println(" |       |")
-			fmt.Println(" |       O")
-			fmt.Println(" |      /|\\")
-			fmt.Println(" |      / \\")
-			fmt.Println(" |       ")
-			fmt.Println("_|_")
-
-			fmt.Println("Игра окончена!")
-			fmt.Println("Загаданное слово было:", string(RuneWord))
-			return
-		}
+func (t *try) printGallows(l int) {
+	if l == 1 {
+		t.imageGallow[4][10] = "O"
 	}
+	if l == 2 {
+		t.imageGallow[5][10] = "|"
+	}
+	if l == 3 {
+		t.imageGallow[5][9] = "/"
+	}
+	if l == 4 {
+		t.imageGallow[5][11] = "\\"
+	}
+	if l == 5 {
+		t.imageGallow[6][9] = "/"
+	}
+	if l == 6 {
+		t.imageGallow[6][11] = "\\"
+	}
+
 }

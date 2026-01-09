@@ -3,6 +3,8 @@ package game
 import "math/rand"
 
 func makeUnderlinedWord() ([]string, []rune) {
+	var index int
+
 	words := []string{
 		"мост", "кран", "окно", "леска", "кусты",
 		"кость", "туча", "муха", "гроза", "ворот",
@@ -11,15 +13,15 @@ func makeUnderlinedWord() ([]string, []rune) {
 		"сумка", "ручка", "лампа", "кружка", "якорь",
 		"тигр", "лиса", "щука", "котик", "пчела",
 	}
-	index := rand.Intn(len(words))
 
-	runeWord := []rune(words[index])
-
+	index = rand.Intn(len(words))
 	underlinedWord := []string{}
 
-	for i, _ := range underlinedWord {
-		underlinedWord[i] = "_"
+	for i := 0; i < len([]rune(words[index])); i++ {
+		underlinedWord = append(underlinedWord, "_")
 	}
 
-	return underlinedWord, runeWord
+	runeAskWord := []rune(words[index])
+
+	return underlinedWord, runeAskWord
 }

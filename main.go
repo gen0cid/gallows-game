@@ -17,7 +17,6 @@ func main() {
 		scanner := bufio.NewScanner(os.Stdin)
 		scanner.Scan()
 		text := scanner.Text()
-		fmt.Println(text)
 
 		switch {
 		case text == "Start":
